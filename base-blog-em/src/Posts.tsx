@@ -3,17 +3,18 @@ import { useState } from "react"
 
 import { fetchPosts, deletePost, updatePost } from "./api"
 import { PostDetail } from "./PostDetail"
+import { Post } from "./interfaces"
 const maxPostPage = 10
 
 export function Posts() {
     const [currentPage, setCurrentPage] = useState(0)
-    const [selectedPost, setSelectedPost] = useState(null)
+    const [selectedPost, setSelectedPost] = useState<Post | null>(null)
 
     // fetch posts with useQuery
     const {
         data = [], // default to empty array, so we don't run into undefined issues
-        isLoading, // No cached data + isFetching
         // isFetching, // async query has not resolved yet
+        isLoading, // No cached data + isFetching
         isError,
         error,
     } = useQuery({
@@ -28,7 +29,7 @@ export function Posts() {
     return (
         <>
             <ul>
-                {data.map((post) => (
+                {data.map((post: Post) => (
                     <li
                         key={post.id}
                         className="post-title"
