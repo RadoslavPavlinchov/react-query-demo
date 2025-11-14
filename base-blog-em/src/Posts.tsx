@@ -1,7 +1,11 @@
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query"
 import { useState, useEffect } from "react"
 
-import { fetchPosts, deletePost, updatePost } from "./api"
+import {
+    fetchPosts,
+    deletePost,
+    // updatePost
+} from "./api"
 import { PostDetail } from "./PostDetail"
 import { Post } from "./interfaces"
 const maxPostPage = 10
@@ -41,7 +45,7 @@ export function Posts() {
     } = useQuery({
         queryKey: ["posts", currentPage],
         queryFn: () => fetchPosts(currentPage),
-        staleTime: 2000, // data is fresh for 2 seconds
+        staleTime: 0, // data is fresh for 0 seconds - default
     })
 
     if (isLoading) return <div>Loading...</div>
@@ -65,6 +69,7 @@ export function Posts() {
             </ul>
             <div className="pages">
                 <button
+                    className="btn-pagination"
                     disabled={currentPage <= 1}
                     onClick={() => {
                         setCurrentPage((prevVal) => prevVal - 1)
@@ -74,6 +79,7 @@ export function Posts() {
                 </button>
                 <span>Page {currentPage}</span>
                 <button
+                    className="btn-pagination"
                     disabled={data.length < maxPostPage}
                     onClick={() => {
                         setCurrentPage((prevVal) => prevVal + 1)

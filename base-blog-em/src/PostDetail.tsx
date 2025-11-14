@@ -32,21 +32,24 @@ export function PostDetail({ post, deleteMutation }: PostDetailProps) {
     } = deleteMutation
 
     return (
-        <>
-            <h3 style={{ color: "blue" }}>{post.title}</h3>
-            <button
-                onClick={() => deleteMutation.mutate(post.id)}
-                disabled={isPending}
-            >
-                {isPending ? "Deleting..." : "Delete"}
-            </button>{" "}
-            <button>Update title</button>
+        <div className="post-detail">
+            <h3>{post.title}</h3>
+            <div className="mb-4">
+                <button
+                    className="btn-delete"
+                    onClick={() => deleteMutation.mutate(post.id)}
+                    disabled={isPending}
+                >
+                    {isPending ? "Deleting..." : "Delete"}
+                </button>
+                <button className="btn-update">Update title</button>
+            </div>
             <p>{post.body}</p>
             {isPending && (
-                <div style={{ color: "orange" }}>Deleting post...</div>
+                <div className="status-pending">Deleting post...</div>
             )}
             {isDeleteError && (
-                <div style={{ color: "red" }}>
+                <div className="status-error">
                     Error deleting post:{" "}
                     {deleteError instanceof Error
                         ? deleteError.message
@@ -54,14 +57,16 @@ export function PostDetail({ post, deleteMutation }: PostDetailProps) {
                 </div>
             )}
             {isSuccess && (
-                <div style={{ color: "green" }}>Post deleted successfully!</div>
+                <div className="status-success">Post deleted successfully!</div>
             )}
-            <h4>Comments</h4>
-            {data.map((comment: Comment) => (
-                <li key={comment.id}>
-                    {comment.email}: {comment.body}
-                </li>
-            ))}
-        </>
+            <div className="comments-section">
+                <h4>Comments</h4>
+                {data.map((comment: Comment) => (
+                    <li key={comment.id} className="comment-item">
+                        <strong>{comment.email}:</strong> {comment.body}
+                    </li>
+                ))}
+            </div>
+        </div>
     )
 }

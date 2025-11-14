@@ -1,0 +1,57 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "title": "Team Standup",
+    "time": "2025-11-13T09:00:00Z",
+    "type": "team",
+    "createdAt": "2025-11-13T08:00:00Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "title": "Project Planning",
+    "time": "2025-11-13T10:30:00Z",
+    "type": "work",
+    "createdAt": "2025-11-13T08:15:00Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440003",
+    "title": "Client Review",
+    "time": "2025-11-13T14:00:00Z",
+    "type": "work",
+    "createdAt": "2025-11-13T08:30:00Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "title": "Design Sync",
+    "time": "2025-11-14T11:00:00Z",
+    "type": "team",
+    "createdAt": "2025-11-13T09:00:00Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440005",
+    "title": "Sprint Retrospective",
+    "time": "2025-11-15T15:30:00Z",
+    "type": "team",
+    "createdAt": "2025-11-13T09:30:00Z"
+  },
+  {
+    "id": "7e201e56-a288-4b72-986a-6b55f3df7010",
+    "title": "123 test",
+    "time": "2025-12-22T08:00",
+    "createdAt": "2025-11-14T04:01:04.913Z"
+  },
+  {
+    "id": "2e3ec3ff-e057-4070-a383-544bec8a07bd",
+    "title": "test meeting ",
+    "time": "2025-11-15T08:02",
+    "type": "personal",
+    "createdAt": "2025-11-14T04:02:54.751Z"
+  },
+  {
+    "id": "b42290a1-3770-425e-99b4-2531111c0ac0",
+    "title": "TTTT",
+    "time": "2025-11-30T06:14",
+    "type": "work",
+    "createdAt": "2025-11-14T04:14:08.414Z"
+  }
+]
